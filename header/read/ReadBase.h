@@ -12,7 +12,7 @@ class ReadBase {
   explicit ReadBase(const ReadOptions &opt) : _opt(opt) {};
   virtual ~ReadBase() { };
   // Factory
-  static ReadBase* createReadIstance(read::Read type, const ReadOptions &opt);
+  static ReadBase* createReadIstance(const ReadOptions &opt);
   // Virtual
   virtual std::vector<std::string> load() = 0;
   

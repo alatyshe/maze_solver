@@ -1,9 +1,9 @@
 #include "other/additional.h"
 #include "write/WriteFile.h"
 
-WriteBase* WriteBase::createWriteIstance(write::Write type, const WriteOptions &opt) {
+WriteBase* WriteBase::createWriteIstance(const WriteOptions &opt) {
   WriteBase *obj;
-  switch(type) {
+  switch(opt.output_type) {
     case write::FILE:
       obj = new WriteFile(opt);
       break;

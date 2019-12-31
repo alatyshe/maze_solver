@@ -1,0 +1,7 @@
+1. 1 step Up
+2. 2 steps Left
+3. 2 steps Down
+4. 4 steps Left
+5. 2 steps Up
+6. 2 steps Left
+Exit

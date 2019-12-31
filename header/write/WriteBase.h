@@ -12,7 +12,7 @@ class WriteBase {
   explicit WriteBase(const WriteOptions &opt) : _opt(opt) { };
   virtual ~WriteBase() { };
   // Factory
-  static WriteBase* createWriteIstance(write::Write type, const WriteOptions &opt);
+  static WriteBase* createWriteIstance(const WriteOptions &opt);
 
   virtual void recordResult(const std::vector<std::string> &solution) const = 0;
 

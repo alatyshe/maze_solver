@@ -1,22 +1,24 @@
 #pragma once
 
-#include "read/ReadBase.h"
-#include "algo/AlgoBase.h"
-#include "write/WriteBase.h"
+#include "other/additional.h"
 
+#include "read/ReadFile.h"
+#include "parse/Parser.h"
+#include "algo/AlgoManhattan.h"
+#include "write/WriteFile.h"
 
-class Solver
-{
+class Solver {
+  Solver() = delete;
+  Solver(const Solver &src) = delete;
+  Solver& operator=(const Solver &src) = delete;
+
  public:
-  Solver(read::Read input_type, 
-      algo::Algo algo_type, 
-      write::Write output_type) {
-
-  };
+  Solver(const ReadOptions &r_opt, const algo::Algo &a_opt, const WriteOptions &w_opt);
   ~Solver() {};
+  void solveMaze(int y, int x);
 
- protected:
-  // std::unique_ptr<ReadBase>  reader;
-  // std::unique_ptr<AlgoBase>  alogithm;
-  // std::unique_ptr<WriteBase> writer;
+ private:
+  std::unique_ptr<ReadBase> read;
+  std::unique_ptr<AlgoBase> algo;
+  std::unique_ptr<WriteBase> writer;
 };

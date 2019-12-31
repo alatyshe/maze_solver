@@ -15,10 +15,10 @@ Maze::Maze(const Maze &src) :
     map(src.map) {
 }
 
-Maze::Maze(std::vector<std::string> &source, int x, int y) :
-    x_coord(x),
+Maze::Maze(std::vector<std::string> &source, int y, int x) :
+    height(source.size()),
     y_coord(y),
-    height(source.size()) {  
+    x_coord(x) {  
   width = -1;
   for (std::string &line : source) {
     if (width == -1)

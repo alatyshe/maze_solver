@@ -1,7 +1,7 @@
 #include "parse/Parser.h"
 
 
-std::vector<std::string> Parser::parseMap(std::vector<std::string> &input, int x, int y) {
+std::vector<std::string> Parser::parseMap(std::vector<std::string> &input, int y, int x) {
   std::vector<std::string> output;
   bool empty_line = false;
   int curr_width;

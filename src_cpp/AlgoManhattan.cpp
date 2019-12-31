@@ -67,7 +67,6 @@ std::vector<std::string> AlgoManhattan::solution(const Maze &maze, int y_start, 
   // We move from the exit to the starting coordinates
   while (x != x_start || y != y_start) {
     int best_value = INT_MAX;
-    int current_value = 0;
     int tmp_y = y;
     int tmp_x = x;
 

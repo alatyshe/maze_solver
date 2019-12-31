@@ -10,5 +10,5 @@ class Parser {
   Parser &operator=(const Parser &source) = delete;
   
 public:
-  static std::vector<std::string> parseMap(std::vector<std::string> &input, int x, int y);
+  static std::vector<std::string> parseMap(std::vector<std::string> &input, int y, int x);
 };

@@ -2,7 +2,18 @@
 
 #include "other/additional.h"
 
+namespace read {
+  enum Read {
+    FILE=1,
+    DATABASE,
+    SERVER,
+    GENERATOR
+  };
+};
+
 struct ReadOptions {
+  read::Read  intput_type = read::FILE;
+
   // params to Read maze from File
   std::string filename = "";
 

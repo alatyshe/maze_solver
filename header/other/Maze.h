@@ -6,10 +6,9 @@ class Maze {
  public:
   Maze();
   Maze(const Maze &src);
-  Maze(std::vector<std::string> &source, int x, int y);
+  Maze(std::vector<std::string> &source, int y, int x);
 
   Maze& operator=(const Maze& src);
-
   std::string info(bool displayMarkedMap=false) const;
 
   bool  isCoordValid(int y, int x) const;
@@ -26,9 +25,9 @@ class Maze {
   int  getX() const;
 
  private:
-  int   height=0;
-  int   width=0;
-  int   y_coord=0;
-  int   x_coord=0;
+  int height=-1;
+  int width=-1;
+  int y_coord=-1;
+  int x_coord=-1;
   std::vector<std::vector<int>> map;
 };

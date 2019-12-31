@@ -1,9 +1,9 @@
 #include "other/additional.h"
 #include "read/ReadFile.h"
 
-ReadBase* ReadBase::createReadIstance(read::Read type, const ReadOptions &opt) {
+ReadBase* ReadBase::createReadIstance(const ReadOptions &opt) {
   ReadBase *obj;
-  switch(type) {
+  switch(opt.intput_type) {
     case read::FILE: 
       obj = new ReadFile(opt);
       break;

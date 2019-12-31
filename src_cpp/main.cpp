@@ -1,11 +1,10 @@
 #include "other/additional.h"
 #include "other/Maze.h"
 
-#include "read/ReadFile.h"
+#include "other/Solver.h"
 #include "parse/Parser.h"
 #include "algo/AlgoManhattan.h"
 #include "write/WriteFile.h"
-#include "other/Solver.h"
 
 int main(int argc, char *argv[]) {
   try {
@@ -13,20 +12,12 @@ int main(int argc, char *argv[]) {
       std::string filename = argv[1];
       int x = std::stoi(argv[2]);
       int y = std::stoi(argv[3]);
-      // Read
+      
       ReadOptions r_opt;
       r_opt.filename = filename;
-      ReadBase *read = ReadBase::createReadIstance(read::FILE, r_opt);
-      std::vector<std::string> input = read->load();
-      // Parse
-      std::vector<std::string> source = Parser::parseMap(input, x, y);
-      Maze maze(source, x, y);
-      // Solve
-      AlgoBase *algorithm = AlgoBase::createAlgoInstance(algo::MANHATTAN);
-      std::vector<std::string> solution = algorithm->searchSolution(maze);
-      // Write
-      WriteBase *writer = WriteBase::createWriteIstance(write::FILE, WriteOptions());
-      writer->recordResult(solution);
+      Solver sol(r_opt, algo::MANHATTAN, WriteOptions());
+      sol.solveMaze(y, x);
+
     } else {
       std::cout << "Usage:" << std::endl
         << "\t./test file.txt x y" << std::endl;

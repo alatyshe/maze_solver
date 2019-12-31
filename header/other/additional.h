@@ -32,34 +32,6 @@ namespace mazeStatus {
   };
 };
 
-namespace direct {
-  enum Direct {
-    UP=1,
-    DOWN,
-    LEFT,
-    RIGHT,
-    FINISH,
-    INVALID
-  };
-};
-
-namespace read {
-  enum Read {
-    FILE=1,
-    DATABASE,
-    SERVER,
-    GENERATOR
-  };
-};
-
-namespace write {
-  enum Write {
-    FILE=1,
-    OUTPUT,
-    SERVER
-  };
-};
-
 namespace algo {
   enum Algo {
     MANHATTAN=1,
